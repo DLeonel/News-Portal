@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Blog - Home</title>
+    <!-- Importando scripts do Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importando ícones da biblioteca bootstrap-icons-->
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <script>
+        // Configuração rápida de tema para o Tailwind
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        darkCard: '#151b2c',
+                        accentCyan: '#00f2fe',
+                        accentPurple: '#9b51e0'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0b0f19] text-gray-200 min-h-screen flex flex-col justify-between antialiased">
+
+    <header class="bg-[#151b2c] border-b-2 border-[#00f2fe] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="bi bi-cpu text-[#00f2fe] text-2xl"></i>
+                    <span class="text-xl font-bold tracking-wider text-white">TECHNOLOGY</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-4">
+                    <a href="#" class="text-white border-b-2 border-[#00f2fe] px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-400 hover:text-[#00f2fe] transition px-3 py-2 text-sm font-medium">Admin</a>
+                </nav>
+
+                <div class="flex md:hidden">
+                    <button type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <i class="bi bi-list text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-[#151b2c] border-t border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="home.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="adminPainnel.html" class="text-gray-400 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        
+        <div class="border-b border-gray-800 pb-4 mb-8">
+            <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="bi bi-newspaper text-[#9b51e0]"></i> Artigos Recentes
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="home-articles-grid">
+            
+            <article class="bg-[#151b2c] border border-gray-800 rounded-lg overflow-hidden shadow-lg hover:border-[#00f2fe] transition duration-300 flex flex-col justify-between group">
+                <div class="p-6">
+                    <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+                        <span><i class="bi bi-calendar3"></i> 11 Jun, 2026</span>
+                        <span class="bg-gray-800 text-[#00f2fe] px-2 py-0.5 rounded">Backend</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white group-hover:text-[#00f2fe] transition mb-3 line-clamp-2">
+                        O impacto das arquiteturas orientadas a eventos no desenvolvimento atual
+                    </h2>
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                        Compreender como a reatividade e o processamento assíncrono transformaram a escalabilidade de sistemas modernos utilizando Node.js e filas de mensagens.
+                    </p>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                    <button class="w-full bg-gray-800 hover:bg-[#00f2fe] text-white hover:text-black font-medium py-2 px-4 rounded transition flex items-center justify-center gap-2">
+                        Ler Artigo <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="bg-[#151b2c] border border-gray-800 rounded-lg overflow-hidden shadow-lg hover:border-[#00f2fe] transition duration-300 flex flex-col justify-between group">
+                <div class="p-6">
+                    <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+                        <span><i class="bi bi-calendar3"></i> 08 Jun, 2026</span>
+                        <span class="bg-gray-800 text-[#00f2fe] px-2 py-0.5 rounded">Banco de Dados</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white group-hover:text-[#00f2fe] transition mb-3 line-clamp-2">
+                        Modelagem de dados eficiente: Melhores práticas para ORMs
+                    </h2>
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                        Evite gargalos de performance. Saiba como estruturar relacionamentos, índices e migrações eficientes sem perder o controle do código SQL gerado.
+                    </p>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                    <button class="w-full bg-gray-800 hover:bg-[#00f2fe] text-white hover:text-black font-medium py-2 px-4 rounded transition flex items-center justify-center gap-2">
+                        Ler Artigo <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <article class="bg-[#151b2c] border border-gray-800 rounded-lg overflow-hidden shadow-lg hover:border-[#00f2fe] transition duration-300 flex flex-col justify-between group">
+                <div class="p-6">
+                    <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+                        <span><i class="bi bi-calendar3"></i> 02 Jun, 2026</span>
+                        <span class="bg-gray-800 text-[#00f2fe] px-2 py-0.5 rounded">Web Design</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white group-hover:text-[#00f2fe] transition mb-3 line-clamp-2">
+                        Otimização de interfaces para dispositivos móveis de baixa performance
+                    </h2>
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                        Estratégias críticas de CSS, renderização condicional e otimização de pacotes para entregar carregamentos abaixo de 1 segundo em redes móveis limitadas.
+                    </p>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                    <button class="w-full bg-gray-800 hover:bg-[#00f2fe] text-white hover:text-black font-medium py-2 px-4 rounded transition flex items-center justify-center gap-2">
+                        Ler Artigo <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+  <footer class="bg-[#070a12] border-t border-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-500">
+                &copy; 2026 <span class="text-white font-semibold">Technology</span>. Todos os direitos reservados.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-500 hover:text-[#00f2fe] transition text-lg"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#00f2fe] transition text-lg"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#00f2fe] transition text-lg"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('bi-list', 'bi-x-lg');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('bi-x-lg', 'bi-list');
+            }
+        }
+    </script>
+</body>
+</html>
