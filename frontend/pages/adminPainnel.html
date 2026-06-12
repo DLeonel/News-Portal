@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology Blog - Painel Administrativo</title>
+    <title><span id="nameOfSite"></span>  Blog - Painel Administrativo</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Bootstrap Icons CDN -->
@@ -34,10 +34,10 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-2">
                     <i class="bi bi-sliders text-[#9b51e0] text-xl"></i>
-                    <span class="text-md font-bold tracking-wider text-white">TECHNOLOGY
-                        <span class="text-xs text-[#9b51e0] font-mono">[PAINEL ADM]</span>
+                    <span  class="text-md font-bold tracking-wider text-white" class="nameOfSite">
+                        <span class="text-xs text-[#9b51e0] font-mono"></span>
                         <div>
-                            <span class="text-xs text-[#9b51e0] font-mono">username</span>
+                            <span class="text-xs text-[#9b51e0] font-mono" class="currentUserName"></span>
                         </div>
                         </span>
                 </div>
@@ -69,20 +69,20 @@
                 <div>
                     <label for="site-name-input" class="block text-xs font-medium text-gray-400 mb-1">Nome do Blog /
                         Site</label>
-                    <input type="text" id="site-name-input" name="site_name" value="Technology" required
+                    <input type="text" id="site-name-input" name="site_name" value="" required
                         class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition">
                 </div>
                 <!-- Logotipo / Imagem (URL ou caminho para o Banco) -->
                 <div>
-                    <label for="site-logo-input" class="block text-xs font-medium text-gray-400 mb-1">Caminho/URL do
+                    <label for="site-logo-input" class="block text-xs font-medium text-gray-400 mb-1">
                         Logotipo do Site</label>
                     <input type="text" id="site-logo-input" name="site_logo" value="bi-cpu"
-                        placeholder="Ex: bi-cpu ou url_imagem.png" required
+                        placeholder="Ex: bi-cpu ou url_imagem.png" 
                         class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition">
                 </div>
                 <!-- Botão de Atualizar Configurações -->
                 <div class="md:col-span-2 text-right">
-                    <button type="submit"
+                    <button type="submit" id="btn-post-site-settings"
                         class="bg-gray-800 hover:bg-[#00f2fe] text-white hover:text-black text-xs font-semibold px-5 py-2.5 rounded transition">
                         Atualizar Identidade
                     </button>
@@ -112,13 +112,6 @@
                             class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition">
                     </div>
                     <div>
-                        <label for="article-image-input" class="block text-xs font-medium text-gray-400 mb-1">Imagem de
-                            Capa</label>
-                        <input type="file" id="article-image-input" name="article_image" required
-                            placeholder="Insira uma imagem..."
-                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition">
-                    </div>
-                    <div>
                         <label for="article-title-input" class="block text-xs font-medium text-gray-400 mb-1">Título do
                             Artigo</label>
                         <input type="text" id="article-title-input" name="article_title" required
@@ -127,8 +120,8 @@
                     </div>
                     <div>
                         <label for="article-content-input" class="block text-xs font-medium text-gray-400 mb-1">Conteúdo
-                            do Artigo</label>
-                        <textarea id="article-content-input" name="article_content" rows="6" required
+                            do Artigo / suporte html! </label>
+                        <textarea id="article-content-input" name="article_content"  required
                             placeholder="Escreva o texto completo do artigo..."
                             class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition"></textarea>
                     </div>
@@ -214,7 +207,7 @@
                         class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#00f2fe] transition">
                 </div>
                 <div class="text-right">
-                    <button type="submit"
+                    <button type="submit" id="btn-footer-settings"
                         class="bg-gray-800 hover:bg-[#00f2fe] text-white hover:text-black text-xs font-semibold px-5 py-2.5 rounded transition">
                         Atualizar Rodapé
                     </button>
@@ -226,65 +219,11 @@
 
     <!-- FOOTER ESTÁTICO DO PAINEL -->
     <footer class="bg-[#070a12] border-t border-gray-800 py-4 text-center text-xs text-gray-600">
-        Ambiente de Gerenciamento Seguro &bull; Technology Blog 2026
+        Ambiente de Gerenciamento Seguro &bull; <span id="nameOfSite">Technology</span>2026
     </footer>
 
     <!-- LÓGICA DE INTERAÇÃO PARA SIMULAÇÃO DO RECEBIMENTO DE IDS -->
-    <script>
-        // Simulação do comportamento de edição capturando dados por ID
-        function editArticleMock(id) {
-            // No cenário real, seu backend renderizará os valores ou você fará um Fetch/Axios buscando pelo ID recebido
-            const titleField = document.getElementById('article-title-input');
-            const contentField = document.getElementById('article-content-input');
-            const idField = document.getElementById('article-id-input');
-
-            const formTitle = document.getElementById('article-form-title');
-            const saveBtn = document.getElementById('btn-save-article');
-            const cancelBtn = document.getElementById('btn-cancel-edit');
-
-            // Injeta o ID recebido no campo oculto do formulário
-            idField.value = id;
-
-            // Altera o estado visual do formulário para modo "Edição"
-            if (id === 1) {
-                titleField.value = "O impacto das arquiteturas orientadas a eventos no desenvolvimento atual";
-                contentField.value = "Conteúdo completo simulado do artigo número 1...";
-            } else if (id === 2) {
-                titleField.value = "Modelagem de dados eficiente: Melhores práticas para ORMs";
-                contentField.value = "Conteúdo completo simulado do artigo número 2...";
-            }
-
-            formTitle.innerText = `Editar Artigo #${id}`;
-            saveBtn.innerText = "Atualizar Dados";
-            saveBtn.classList.replace('bg-[#9b51e0]', 'bg-amber-500');
-            cancelBtn.classList.remove('hidden');
-        }
-
-        // Simulação do comportamento de eliminação enviando o ID
-        function deleteArticleMock(id) {
-            if (confirm(`Deseja realmente eliminar o artigo com ID #${id}? Esta ação enviará o ID para remoção no Banco de Dados.`)) {
-                // Aqui você disparará o comando DELETE para a sua rota passando o ID correspondente
-                alert(`Comando enviado! Artigo ID #${id} excluído com sucesso.`);
-
-                // Remove visualmente a linha da tabela
-                const row = document.querySelector(`tr[data-id="${id}"]`);
-                if (row) row.remove();
-                resetArticleForm();
-            }
-        }
-
-        // Reseta o formulário de artigos voltando para o modo de Criação
-        function resetArticleForm() {
-            document.getElementById('form-article-crud').reset();
-            document.getElementById('article-id-input').value = "";
-
-            document.getElementById('article-form-title').innerText = "Publicar Novo Artigo";
-            const saveBtn = document.getElementById('btn-save-article');
-            saveBtn.innerText = "Publicar Artigo";
-            saveBtn.className = saveBtn.className.replace('bg-amber-500', 'bg-[#9b51e0]');
-            document.getElementById('btn-cancel-edit').classList.add('hidden');
-        }
-    </script>
+    <script type="module" src="../js/pages/admin.js"></script>
 </body>
 
 </html>

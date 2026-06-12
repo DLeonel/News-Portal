@@ -5,8 +5,11 @@ const db = require("mysql2");
 const connect = db.createPool({
     host: "localhost",
     user: "root",
-    password: "root",
-    database: "blog_tecnologia",
+    password: "",
+    database: "blog_technology_db",
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 //testando a conexão com o banco de dados...
