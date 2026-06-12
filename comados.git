@@ -1,0 +1,12 @@
+entra na pasta backend e roda: npm i
+
+depos entra na frotend e rada novamente: npm i
+
+para rodar o programa entra na pasta backend e digite: node app.js
+
+
+
+a pasta dump têm a estrutra do banco de dados, basta voces copiarem tudo nela que executar os comandos no workbennn ou use o arquivo databse.sql e colem no workbecn
+
+apos isso abre o arquivo home.html com o live server
+

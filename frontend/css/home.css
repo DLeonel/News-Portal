@@ -1,0 +1,116 @@
+.home-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem
+}
+
+@media(min-width:768px) {
+    .home-articles-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(min-width:1024px) {
+    .home-articles-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.article-card {
+    background: var(--dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: .75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0
+}
+
+.article-card-title {
+    font-size: 1.125rem;
+    margin: 0 0 .5rem;
+    color: var(--text);
+    padding: 0 1.5rem
+}
+
+.article-card-excerpt {
+    color: var(--muted);
+    margin: 0 0 1rem;
+    padding: 0 1.5rem
+}
+
+.article-card .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: .75rem;
+    color: var(--muted);
+    padding: 1rem 1.5rem
+}
+
+.read-btn {
+    background: #0b1220;
+    color: var(--accent-cyan);
+    border: 0;
+    padding: .6rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--accent-cyan);
+    padding: .2rem .4rem;
+    border-radius: .25rem;
+    font-size: .75rem
+}
+
+.meta-date {
+    color: var(--muted);
+    font-size: .85rem
+}
+
+.card-footer {
+    padding: 0 1.5rem 1rem
+}
+
+/* Card accent and hover for home */
+.article-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.article-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.article-card-title {
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.article-card-excerpt {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.home-articles-grid {
+    gap: 1.25rem
+}

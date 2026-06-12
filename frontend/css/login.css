@@ -1,0 +1,133 @@
+#auth-panel {
+    max-width: 28rem;
+    margin: 2.5rem auto
+}
+
+#auth-panel .card {
+    padding: 2rem;
+    border-radius: 1rem
+}
+
+#auth-icon-box {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--accent-cyan);
+    font-size: 1.25rem
+}
+
+#auth-title {
+    font-size: 1.5rem;
+    font-weight: 700
+}
+
+#auth-subtitle {
+    color: var(--muted);
+    margin-top: .25rem
+}
+
+#auth-form {
+    display: block
+}
+
+#auth-form label {
+    display: block;
+    margin-bottom: .25rem;
+    color: var(--muted);
+    font-size: .875rem
+}
+
+#auth-submit-btn {
+    width: 100%;
+    background: #111827;
+    color: var(--text);
+    padding: .75rem;
+    border-radius: .5rem;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem
+}
+
+/* Main area for auth pages */
+.auth-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+#auth-submit-btn:hover {
+    background: var(--accent-cyan);
+    color: #000
+}
+
+#auth-toggle-link {
+    color: var(--accent-cyan);
+    background: none;
+    border: 0;
+    cursor: pointer
+}
+
+/* Form icons padding fix (input with left icon) */
+.input-with-icon {
+    padding-left: 2.5rem
+}
+
+.icon-left {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #9ca3af
+}
+
+#auth-submit-btn.btn-auth {
+    width: 100%;
+    background: #111827;
+    color: var(--text);
+    padding: .75rem;
+    border-radius: .5rem;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#auth-submit-btn.btn-auth:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+/* Auth card refinement */
+.auth-main .max-w-md,
+#auth-panel {
+    max-width: 420px
+}
+
+.auth-main .max-w-md .card,
+#auth-panel .card {
+    background: linear-gradient(180deg, rgba(20, 24, 31, 0.6), var(--dark-card));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5)
+}
+
+#auth-icon-box {
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    color: #000;
+    border: 0
+}
+
+.input.form-control {
+    background: #0b1220;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text)
+}

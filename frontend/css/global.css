@@ -1,0 +1,526 @@
+:root {
+    --dark-bg: #0b0f19;
+    --dark-card: #151b2c;
+    --accent-cyan: #00f2fe;
+    --accent-purple: #9b51e0;
+    --muted: #9ca3af;
+    --text: #e5e7eb;
+}
+
+/* Base */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--dark-bg);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout helpers */
+.max-w-4xl {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.flex {
+    display: flex
+}
+
+.items-center {
+    align-items: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.text-center {
+    text-align: center
+}
+
+/* Cards / containers */
+.card {
+    background: var(--dark-card);
+    border: 1px solid rgba(148, 163, 184, 0.06);
+    border-radius: 0.75rem;
+    padding: 1.25rem
+}
+
+.rounded-xl {
+    border-radius: 1rem
+}
+
+.rounded-lg {
+    border-radius: 0.5rem
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(2, 6, 23, 0.7)
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .65rem 1rem;
+    border-radius: .5rem;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.btn-accent {
+    background: var(--accent-cyan);
+    color: #000
+}
+
+.btn-ghost {
+    background: #111827;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.04)
+}
+
+/* Site name */
+#nameOfSite {
+    text-transform: uppercase;
+}
+
+/* Text */
+.text-muted {
+    color: var(--muted)
+}
+
+.accent-cyan {
+    color: var(--accent-cyan)
+}
+
+.accent-purple {
+    color: var(--accent-purple)
+}
+
+/* Form elements */
+.input,
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: .75rem 1rem;
+    background: #0f1724;
+    border: 1px solid #1f2937;
+    border-radius: .5rem;
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box
+}
+
+.input:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.08)
+}
+
+/* Header / Footer */
+header.site-header {
+    background: var(--dark-card);
+    border-bottom: 2px solid var(--accent-cyan)
+}
+
+footer.site-footer {
+    background: #070a12;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1rem 0
+}
+
+/* Utility */
+.hidden {
+    display: none
+}
+
+.badge {
+    background: #0b1220;
+    color: var(--accent-cyan);
+    padding: .25rem .5rem;
+    border-radius: .375rem;
+    font-size: .75rem
+}
+
+/* Spacing helpers */
+.gap-2 {
+    gap: .5rem
+}
+
+.gap-4 {
+    gap: 1rem
+}
+
+.gap-6 {
+    gap: 1.5rem
+}
+
+/* Container sizes */
+.max-w-7xl {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+/* Site layout shortcuts */
+.site-body {
+    background: var(--dark-bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+.site-header {
+    background: var(--dark-card);
+    border-bottom: 2px solid var(--accent-cyan);
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+
+.site-footer {
+    background: #070a12;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1rem 0
+}
+
+/* Navigation responsive helpers */
+.nav-desktop {
+    display: none
+}
+
+.mobile-toggle {
+    display: flex
+}
+
+.mobile-menu {
+    display: none;
+    background: var(--dark-card);
+    border-top: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: var(--muted);
+    text-decoration: none
+}
+
+.nav-link.active {
+    background: #0f1724;
+    color: var(--text);
+    border-bottom: 2px solid var(--accent-cyan)
+}
+
+@media(min-width:768px) {
+    .nav-desktop {
+        display: flex;
+        align-items: center;
+        gap: 1rem
+    }
+
+    .mobile-toggle {
+        display: none
+    }
+
+    .mobile-menu {
+        display: none
+    }
+}
+
+/* Sticky top helper */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+
+/* Container / Layout helpers */
+.container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.main-content {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    flex-grow: 1;
+    width: 100%
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* Theme refinements: subtle background, header, nav and card accents */
+body {
+    background: linear-gradient(180deg, #07090f 0%, var(--dark-bg) 100%);
+}
+
+.site-header {
+    padding: .5rem 0;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav-link {
+    color: var(--muted);
+    padding: .45rem .75rem;
+    border-radius: .375rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.02);
+    text-decoration: none;
+}
+
+.nav-link-active {
+    color: var(--text);
+    background: linear-gradient(90deg, rgba(0, 242, 254, 0.06), rgba(155, 81, 224, 0.04));
+    border-bottom: 2px solid var(--accent-cyan);
+}
+
+.site-footer {
+    padding: 1.25rem 0;
+    background: linear-gradient(0deg, #06070a, #070a12);
+    color: var(--muted);
+}
+
+/* Card refinements used site-wide */
+.card-accent {
+    position: relative;
+    overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+}
+
+.card-accent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+    opacity: .9;
+}
+
+.card-accent:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Utility small helpers */
+.muted-sm {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.text-bright {
+    color: var(--text);
+}
+
+/* Admin table refinements */
+.admin-table thead th {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--muted);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.admin-actions {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+}
+
+/* Bootstrap integration overrides */
+.form-control {
+    background: var(--dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    border-radius: .5rem;
+    padding: .6rem .75rem;
+    box-sizing: border-box
+}
+
+.form-control::placeholder {
+    color: var(--muted);
+    opacity: 1
+}
+
+.btn {
+    border-radius: .5rem;
+    font-weight: 600
+}
+
+.btn-primary {
+    background: var(--accent-cyan);
+    color: #000;
+    border-color: var(--accent-cyan)
+}
+
+.btn-outline-secondary {
+    color: var(--accent-cyan);
+    border-color: rgba(255, 255, 255, 0.06);
+    background: transparent
+}
+
+.card,
+.bg-card {
+    background: var(--dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: .75rem
+}
+
+.btn-sm {
+    padding: .35rem .6rem;
+    font-size: .9rem
+}
+
+/* Compat: utilitários Tailwind usados no projeto (mapeamento rápido) */
+.text-gray-500 {
+    color: var(--muted)
+}
+
+.text-gray-400 {
+    color: rgba(156, 163, 175, 0.95)
+}
+
+.text-gray-300 {
+    color: rgba(209, 213, 219, 0.9)
+}
+
+.text-white {
+    color: var(--text)
+}
+
+.bg-gray-800 {
+    background: #0b1220
+}
+
+.border-gray-800 {
+    border-color: rgba(255, 255, 255, 0.03)
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem
+}
+
+.py-3 {
+    padding-top: .75rem;
+    padding-bottom: .75rem
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem
+}
+
+.text-xs {
+    font-size: .75rem
+}
+
+.text-sm {
+    font-size: .875rem
+}
+
+.text-lg {
+    font-size: 1.125rem
+}
+
+.rounded-md {
+    border-radius: .5rem
+}
+
+.rounded-lg {
+    border-radius: .75rem
+}
+
+.shadow-md {
+    box-shadow: 0 8px 20px rgba(2, 6, 23, 0.5)
+}
+
+.shadow-xl {
+    box-shadow: 0 25px 50px -12px rgba(2, 6, 23, 0.7)
+}
+
+.inline-flex {
+    display: inline-flex
+}
+
+.items-center {
+    align-items: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.gap-4 {
+    gap: 1rem
+}
+
+.gap-2 {
+    gap: .5rem
+}
+
+.flex-col {
+    flex-direction: column
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* small helpers for text-truncate used in admin */
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.max-w-[200px] {
+    max-width: 200px
+}
